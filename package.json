@@ -1,0 +1,43 @@
+{
+  "name": "oxlint-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for Oxlint",
+  "type": "module",
+  "bin": "./src/mcp-cli.js",
+  "files": [
+    "src"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "tsc",
+    "pretest": "npm run build",
+    "test": "npm run test:unit",
+    "test:coverage": "c8 npm run test:unit",
+    "test:unit": "mocha \"tests/**/*.test.js\""
+  },
+  "keywords": [
+    "oxlint",
+    "mcp"
+  ],
+  "license": "Apache-2.0",
+  "engines": {
+    "node": "^20.19.0 || ^22.13.0 || >=24"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.26.0",
+    "oxlint": "^1.50.0",
+    "zod": "^4.1.13"
+  },
+  "devDependencies": {
+    "@cfworker/json-schema": "^4.1.1",
+    "@types/node": "^24.7.2",
+    "c8": "^10.1.3",
+    "mocha": "^11.7.2",
+    "typescript": "^5.9.3"
+  }
+}
